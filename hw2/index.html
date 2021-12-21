@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="container-fluid mx-auto">
+            <div class="row mt-2 offset-2">
+                <!-- first col -->
+                <div class="col-6" style="width:33%" id="formCol">
+                    <form id="form1">
+                        <div class="mb-3 mt-2">
+                            <input type="text" class="form-control" id="name" placeholder="Username *">
+                            <div id="name-error" class="text-danger"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="email" placeholder="Email *"
+                                aria-label="Email *">
+                            <div id="email-error" class="text-danger"></div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <div ng-app="myapp">
+                                <div ng-controller="PasswordController">
+                                    <div>
+                                        <input type="text" class="form-control" id="password" placeholder="Password *"
+                                            aria-label="Password *" ng-model="password" ng-change="analyze(password)" />
+                                    </div>
+                                    <div id="password-error" class="text-danger"></div>
+                                    <p class="text-danger" id="passwordTest"></p>
+                                    <label for="password-strength" class="form-label"><b>Password Strength:</b></label>
+                                    <div id="password-strength" ng-style="passwordStrength">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 mt-5">
+                            <label for="inputState" class="form-label"><b>Role *</b></label>
+                            <select id="inputState" class="form-select">
+                                <option selected></option>
+                                <option>Admin</option>
+                                <option>User</option>
+                            </select>
+                            <div id="role-error" class="text-danger"></div>
+                        </div>
+
+                        <div class="mb-3 mt-4">
+                            <label for="radio-options" class="form-label"><b>System *</b> </label><br>
+                            <span id="radio-options">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Windows</label>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Linux</label>
+                            </span>
+                            <div id="radio-error" class="text-danger"></div>
+                        </div>
+
+                        <div class="mb-3 mt-2">
+                            <label for="checkBox" class="form-label"><b>Affiliation *</b> </label>
+                            <div id="checkBox">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                    <label class="form-check-label" for="flexCheckDefault1">R&D</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                                    <label class="form-check-label" for="flexCheckDefault2">Finance</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                                    <label class="form-check-label" for="flexCheckDefault3">Marketing</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                    <label class="form-check-label" for="flexCheckDefault4">Management</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mb-3 mt-2" style="width: 40%;">
+                            <button type="button" class="btn btn-secondary btn-sm" id="button-sign-up">SignUp</button>
+                        </div>
+                    </form>
+
+
+                </div> <!-- end first col -->
+
+                <!-- second col -->
+                <div class="col-6" style="width:33%">
+                    <h5></h5>
+
+                    <div id="output">
+
+                    </div>
+                </div><!-- end second col -->
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </body>
+
+</html>
